@@ -5,7 +5,7 @@ import CartProduct from '../components/CartProduct'
 import ResetCart from '@/components/ResetCart'
 import Link from 'next/link'
 import CartPayment from '@/components/CartPayment'
-const cart = () => {
+const Cart = () => {
     const {productData} = useSelector((state:StateProps)=>state.next);
 
     console.log
@@ -43,4 +43,4 @@ const cart = () => {
   )
 }
 
-export default cart
+export default Cart

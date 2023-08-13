@@ -31,7 +31,7 @@ useEffect(()=>{
 
         )
     }
-},[session])
+},[session,dispatch])
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50 ">
     <div className="h-full w-full mx-auto inline-flex items-center justify-between px-4">
@@ -56,7 +56,7 @@ useEffect(()=>{
                 <div 
                 
                 className="lg:text-sm text-[10px] text-gray-100 flex items-center gap-2 px-2 border border-transparent hover:border-white duration-300 h-[70%] cursor-pointer">
-                <img src={userInfo.image} alt="user-image"  className="w-8 h-8 rounded-full object-cover"/>
+                <Image src={userInfo.image} alt="user-image"  className="w-8 h-8 rounded-full object-cover"/>
                 <div className="md:text-xs  text-[8px] text-gray flex flex-col justify-between">
                     <p className="text-white font-bold">{userInfo.name}</p>
                     <p>{userInfo.email}</p>
@@ -86,7 +86,7 @@ useEffect(()=>{
             </span>
  
         </Link>
-        <Link href={'/cart'} className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%} relative">
+        <Link href={'/Cart'} className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%} relative">
             <Image src={carIcon} alt="cartIcon" className="w-8 object-contain h-9 lg:w-auto"/>
             <p className="text-[10px] lgl:text-lg text-white font-bold mt-3">Cart
             <span  suppressHydrationWarning  className="absolute text-amazon_yellow text-xs lgl:text-lg -top-1 left-[22px] lgl:left-[31px] font-semibold text-center">{productData? productData.length :0 }</span>
