@@ -56,7 +56,7 @@ useEffect(()=>{
                 <div 
                 
                 className="lg:text-sm text-[10px] text-gray-100 flex items-center gap-2 px-2 border border-transparent hover:border-white duration-300 h-[70%] cursor-pointer">
-                <Image src={userInfo.image} alt="user-image"  className="w-8 h-8 rounded-full object-cover"/>
+                <img src={userInfo.image} alt="user-image"  className="w-8 h-8 rounded-full object-cover"/>
                 <div className="md:text-xs  text-[8px] text-gray flex flex-col justify-between">
                     <p className="text-white font-bold">{userInfo.name}</p>
                     <p>{userInfo.email}</p>
