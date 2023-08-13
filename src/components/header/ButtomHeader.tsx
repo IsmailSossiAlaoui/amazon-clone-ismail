@@ -38,7 +38,7 @@ const handleSignout = () => {
      
 
         <div className='flex items-center justify-between md:gap-4  gap-4 '>
-        <Link href='/' className='border border-transparent hover:border-white duration-300 md:p-3 sml:text-base text-xs '>Today's Deals</Link>
+        <Link href='/' className='border border-transparent hover:border-white duration-300 md:p-3 sml:text-base text-xs '>Deals of today</Link>
         <Link href='/' className='border border-transparent hover:border-white duration-300 md:p-3 sml:text-base text-xs'>Customer Service</Link>
         <Link href='/' className='border border-transparent hover:border-white duration-300 md:p-3 sml:text-base text-xs'>Gift Cards</Link> 
         <Link href='/' className='border border-transparent hover:border-white duration-300 md:p-3 sml:text-base text-xs'>Sell</Link>
