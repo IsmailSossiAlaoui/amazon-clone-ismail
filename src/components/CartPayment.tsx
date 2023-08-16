@@ -17,29 +17,31 @@ const CartPayment = () => {
         })
         setTotalAmount(amt)
     },[productData])
-    //Stripe payment
-    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
-    const {data:session} = useSession()
-    const handleCheckout = async() =>{
+    const stripePromise = loadStripe(
+        process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+      );
+      const { data: session } = useSession();
+    
+      const handleCheckout = async () => {
         const stripe = await stripePromise;
-        const response = await fetch("/api/checkout" ,{
-            method: "POST",
-            headers : {
-                "Content-Type": "application/json",
-            },
-            body:JSON.stringify({
-                items:productData,
-                email:session?.user?.email
-            }),
+    
+        const response = await fetch("/api/checkout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ items: productData, email: session?.user?.email }),
         });
         const checkoutSession = await response.json();
-
-        //Redirecting to Stripe checkout
-        const result:any= await stripe?.redirectToCheckout({ sessionId: checkoutSession.id,})
-        if (result.error){
-            alert(result?.error.message)
+    
+        // Redirecting user/customer to Stripe Checkout
+        const result: any = await stripe?.redirectToCheckout({
+          sessionId: checkoutSession.id,
+        });
+        if (result.error) {
+          alert(result?.error.message);
         }
-    }
+      };
   return (
     <div className='flex flex-col gap-4 items-center justify-center h-fit'>
         <div className='flex gap-4 px-5'>

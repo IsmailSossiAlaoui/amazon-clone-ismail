@@ -26,7 +26,7 @@ export default async function handler(
     },
     line_items: modifiedItems,
     mode: "payment",
-    success_url: `${process.env.NEXTAUTH_URL}/Success`,
+    success_url: `${process.env.NEXTAUTH_URL}/success`,
     cancel_url: `${process.env.NEXTAUTH_URL}/checkout`,
     metadata: {
       email,
